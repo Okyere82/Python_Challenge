@@ -1,0 +1,18 @@
+The Resources named "budget_data.csv" is where the raw data for this challenge can be found.
+The file includes a record of dates along with corresponsing values that represents either a profit or loss.
+The script created would analyze the records to calculate the following over the given time period:
+
+1. Total number of months included in the dataset
+
+2. A total net value of either a profit or loss of the Changes 
+   in profits or losses the date and amount of the greatest increase in profitsthe date 
+   and amount of the greatest increase in losses.
+
+3. A Financial analysis table would be derived to showcase the data
+
+ The Results show that over an 86 month period, there has been a total profit of $38,382,578.00 On average,
+ the company witnessed a change of -$2315.12 in profit/losses over the time period.
+
+ The greatest increase in profits occured on Feb-2012 with a value of $1,926,159.00
+
+ The greatest decrease in profits occured on Sep-2013 with a value of -$2,196,167.00
