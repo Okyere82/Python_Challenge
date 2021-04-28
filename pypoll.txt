@@ -1,0 +1,93 @@
+import os
+
+import csv
+
+# Assign file location with the pathlib library
+
+with open("election_data.csv",encoding="ISO 8859-1") as csvfile:
+
+# Open csv in default read mode with context manager
+#with open(csv_file_path,newline="", encoding='utf-8') as elections:
+
+
+    # Store data under the csvreader variable
+    csvreader = csv.reader(csvfile,delimiter=",") 
+
+    # Skip the header so we iterate through the actual values
+    header = next(csvreader) 
+    print (header)    
+  # Declare Variables 
+    
+    khan_votes = []
+    correy_votes = []
+    li_votes = []
+    otooley_votes = []
+    votes = []
+    candidates = []
+    county = []
+
+
+    # Iterate through each row in the csv
+    for row in csvreader :
+        votes.append(int(row[0]))
+        county.append(row[1])
+        candidates.append(row[2])
+
+    #VOTE COUNT
+    total_votes = (len(votes))
+    print (total_votes)
+
+    #Votes by Person
+    for candidates in candidates :
+        if candidate == "khan_votes" :
+            khan_votes.append(candidates)
+            khan_votes = len(khan_votes)
+        elif candidate == "correy_votes" :
+            correy_votes.append(candidates)
+            correy_votes = len(correy_votes)
+        elif candidate == "li_votes" :
+            li_votes.append(candidates)
+            li_votes = len(li_votes)
+        else :
+            otooley_votes.append(candidates)
+            otooley_votes = len(otooley_votes)
+    print(khan_votes)
+    print(correy_votes)
+    print(li_votes)
+    print(otooley_votes)
+
+    #Percentages
+    khan_percent = round(((khan_votes /total_votes) * 100),2)
+    correy_percent = round(((correy_votes /total_votes) * 100),2)
+    li_percent = round(((li_votes /total_votes) * 100),2)
+    otooley_percent = round(((otooley_votes /total_votes) * 100),2)
+    print(khan_percent)
+    print(correy_percent)
+    print(li_percent)
+    print(otooley_percent)
+
+    # Winner 
+    if khan_percent > max(correy_percent,li_percent,otooley_percent) :
+        winner = "khan"
+    elif correy_percent > max (khan_percent,li_percent,otooley_percent) :
+        winner = "correy"
+    elif li_percent > max (correy_percent,khan_percent,otooley_percent) :
+        winner = "li"
+    else:
+        winner = "otooley"
+
+        #Print Statements
+
+    print (f"Election Results") + "\n"
+    print (f"________________________________________________________________________") + "\n"
+    print (f"Total Votes : {total_votes}" + "\n")
+    print (f"________________________________________________________________________") + "\n"
+    print (f"khan : {khan_percent}% ({khan_votes})") + "\n"
+    print (f"correy : {correy_percent}% ({correy_votes})") + "\n"
+    print (f"li : {li_percent}% ({li_votes})") + "\n"
+    print (f"otooley : {otooley_percent}% ({otooley_votes})") + "\n"
+    print (f"________________________________________________________________________") + "\n"
+    print(f"Winner : {winner}") + "\n"
+    print (f"________________________________________________________________________")
+
+
