@@ -19,15 +19,10 @@ Greatest_decrease_in_profit = 0
 increase_date = ''
 decrease_date = ''
 data_list = []
-# path to collect data from tne csv file
-#csvpath = os.path.join("Instructions\Resources", "budget_data.csv")
-# csvpath = os.path.join(r"C:\Users\Okyere\RUT-SOM-VIRT-DATA-PT-03-2021-U-C\02-Homework\03-Python\Instructions\PyBank\budget_data.csv")
-# os.chdir("Resources")
 
+# open the csv file 
 with open('budget_data.csv',encoding="ISO 8859-1") as csvfile:
 
-# read in the csv file
-#with open(csvpath, "r") as csvfile:
 
 # Split the data on commas
     csvreader = csv.reader(csvfile,delimiter=",")
@@ -40,8 +35,6 @@ with open('budget_data.csv',encoding="ISO 8859-1") as csvfile:
     #print(f"Header: {csv_header}")
 
 #Total number of months in the dataset
-#row_count =  sum(1 for row in csvreader)
-
 
     for row in data_list: 
     
