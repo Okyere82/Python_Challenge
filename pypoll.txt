@@ -1,13 +1,11 @@
 import os
 
+
 import csv
 
 # Assign file location with the pathlib library
 
 with open("election_data.csv",encoding="ISO 8859-1") as csvfile:
-
-# Open csv in default read mode with context manager
-#with open(csv_file_path,newline="", encoding='utf-8') as elections:
 
 
     # Store data under the csvreader variable
@@ -18,10 +16,10 @@ with open("election_data.csv",encoding="ISO 8859-1") as csvfile:
     print (header)    
   # Declare Variables 
     
-    khan_votes = []
-    correy_votes = []
-    li_votes = []
-    otooley_votes = []
+    Khan = []
+    Correy = []
+    Li = []
+    otooley = []
     votes = []
     candidates = []
     county = []
@@ -38,28 +36,28 @@ with open("election_data.csv",encoding="ISO 8859-1") as csvfile:
     print (total_votes)
 
     #Votes by Person
-    for candidates in candidates :
-        if candidate == "khan_votes" :
-            khan_votes.append(candidates)
-            khan_votes = len(khan_votes)
-        elif candidate == "correy_votes" :
-            correy_votes.append(candidates)
-            correy_votes = len(correy_votes)
-        elif candidate == "li_votes" :
-            li_votes.append(candidates)
-            li_votes = len(li_votes)
+    for candidate in candidates :
+        if candidate == "Khan" :
+            Khan.append(candidates)
+            Khan_votes = len(Khan)
+        elif candidate == "Correy" :
+            Correy.append(candidates)
+            Correy_votes = len(Correy)
+        elif candidate == "Li" :
+            Li.append(candidates)
+            Li_votes = len(Li)
         else :
-            otooley_votes.append(candidates)
-            otooley_votes = len(otooley_votes)
-    print(khan_votes)
-    print(correy_votes)
-    print(li_votes)
+            otooley.append(candidates)
+            otooley_votes = len(otooley)
+    print(Khan_votes)
+    print(Correy_votes)
+    print(Li_votes)
     print(otooley_votes)
 
     #Percentages
-    khan_percent = round(((khan_votes /total_votes) * 100),2)
-    correy_percent = round(((correy_votes /total_votes) * 100),2)
-    li_percent = round(((li_votes /total_votes) * 100),2)
+    khan_percent = round(((Khan_votes /total_votes) * 100),2)
+    correy_percent = round(((Correy_votes /total_votes) * 100),2)
+    li_percent = round(((Li_votes /total_votes) * 100),2)
     otooley_percent = round(((otooley_votes /total_votes) * 100),2)
     print(khan_percent)
     print(correy_percent)
@@ -68,7 +66,7 @@ with open("election_data.csv",encoding="ISO 8859-1") as csvfile:
 
     # Winner 
     if khan_percent > max(correy_percent,li_percent,otooley_percent) :
-        winner = "khan"
+        winner = "Khan"
     elif correy_percent > max (khan_percent,li_percent,otooley_percent) :
         winner = "correy"
     elif li_percent > max (correy_percent,khan_percent,otooley_percent) :
@@ -78,16 +76,15 @@ with open("election_data.csv",encoding="ISO 8859-1") as csvfile:
 
         #Print Statements
 
-    print (f"Election Results") + "\n"
-    print (f"________________________________________________________________________") + "\n"
+    print (f"Election Results") 
+    print (f"________________________________________________________________________") 
     print (f"Total Votes : {total_votes}" + "\n")
-    print (f"________________________________________________________________________") + "\n"
-    print (f"khan : {khan_percent}% ({khan_votes})") + "\n"
-    print (f"correy : {correy_percent}% ({correy_votes})") + "\n"
-    print (f"li : {li_percent}% ({li_votes})") + "\n"
-    print (f"otooley : {otooley_percent}% ({otooley_votes})") + "\n"
-    print (f"________________________________________________________________________") + "\n"
-    print(f"Winner : {winner}") + "\n"
+    print (f"________________________________________________________________________") 
+    print (f"Khan : {khan_percent}% ({Khan_votes})")
+    print (f"correy : {correy_percent}% ({Correy_votes})")
+    print (f"li : {li_percent}% ({Li_votes})") 
+    print (f"otooley : {otooley_percent}% ({otooley_votes})") 
+    print (f"________________________________________________________________________") 
+    print(f"Winner : {winner}") 
     print (f"________________________________________________________________________")
-
 
